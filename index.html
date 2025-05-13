@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #0a192f;
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #64ffda;
+    }
+    nav {
+      background: #112240;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      color: #64ffda;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      color: #0a192f;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid #64ffda;
+      display: inline-block;
+    }
+
+    .about p {
+      margin-bottom: 1rem;
+    }
+
+    .skills-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.skills-buttons button {
+  padding: 0.5rem 1.2rem;
+  background-color: #e0f7fa;
+  color: #5137b7;
+  border: 2px solid #5137b7;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.skills-buttons button:hover {
+  background-color: #5137b7;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+   .github-button {
+  display: inline-block;
+  margin-top: 0.6rem;
+  padding: 0.5rem 1.2rem;
+  background-color: #24292e;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.github-button:hover {
+  background-color: #0366d6;
+  transform: translateY(-2px);
+}
+.demo-button {
+  display: inline-block;
+  margin-top: 0.4rem;
+  margin-left: 0.8rem;
+  padding: 0.4rem 1rem;
+  background-color: #ffb74d;
+  color: #4e342e;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.demo-button:hover {
+  background-color: #ff9800;
+  transform: scale(1.05);
+}
+
+
+
+    .contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.contact-card {
+  background: #ffffff;
+  border: 2px solid #64ffda;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  border-radius: 12px;
+  width: 240px;
+  text-decoration: none;
+  color: #0a192f;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, background 0.3s;
+}
+
+.contact-card span {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  color: #0077b6;
+}
+
+.contact-card small {
+  display: block;
+  margin-top: 0.3rem;
+  color: #555;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  background: #e0f7fa;
+}
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #112240;
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+      .skills ul {
+        flex-direction: column;
+      }
+    }
+    .resume-download {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.resume-button {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: linear-gradient(135deg, #64ffda, #00bcd4);
+  color: #0a192f;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 188, 212, 0.3);
+  border: none;
+}
+
+.resume-button:hover {
+  background: linear-gradient(135deg, #00bcd4, #64ffda);
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 188, 212, 0.5);
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <header style="background: #0a192f; color: white; padding: 3rem 1rem; position: relative;">
+  <!-- Image in top-right (larger size) -->
+  <img src="my portfolio image.jpg" alt="My Photo" style="
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #64ffda;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  ">
+
+  <!-- Text content -->
+  <h1 style="font-size: 2.8rem; margin-bottom: 0.5rem;">Prinsh Agnihotri</h1>
+  <p style="font-size: 1.2rem; color: #64ffda;">Software developer</p>
+</header>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2 class="section-title">About Me</h2>
+    <p>
+      Junior programmer with proven skills in python, C, C++, HTML, CSS, and JavaScript. Focused on keeping a tight architecture to minimize errors and bugs. Offering a strong software engineering functions and the newest database management knowledge. Strong problem-solver with a proven ability to tackle complex challenges and streamline workflows. A versatile and detail-oriented professional, adept at collaborating 
+with teams to build robust applications across diverse domains. 
+    </p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+  <h2 class="section-title">Projects</h2>
+
+  <div class="project-card">
+    <h3>Emotion Detection with CNN</h3>
+    <p>
+      Developed an Emotion Detection System using Convolutional Neural Networks (CNN) to classify human emotions from facial images using the FER-2013 dataset. Integrated OpenCV for face detection and Keras/TensorFlow for model training.
+    </p>
+    <a href="https://github.com/Prinsh-85/emotion-detection-using-CNN.git" class="github-button" target="_blank">🔗 View on GitHub</a>
+  </div>
+  <div class="project-card">
+  <h3>Online Cake Shopping Application</h3>
+  <p>
+    Built a fully functional e-commerce website for cake shopping using HTML, CSS, and JavaScript. Features include product search, category filtering, user login, and an attractive popup UI. The site is responsive, user-friendly, and optimized for engagement.
+  </p>
+  <a href="https://github.com/Prinsh-85/Projects.git" class="github-button" target="_blank">🔗 View on GitHub</a>
+</div>
+
+
+  <div class="project-card">
+    <h3>Brain Tumour Detection Web Application</h3>
+    <p>
+      Created a deep learning-powered web app using CNN to classify brain MRI images as tumor or no tumor. Built with Python, Flask, and TensorFlow, featuring an interactive UI using HTML, CSS, and heatmap visualizations.
+    </p>
+    <a href="https://github.com/Prinsh-85/Brain-tumor-detection-.git" class="github-button" target="_blank">🔗 View on GitHub</a>
+  </div>
+</section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+  <h2 class="section-title">Skills</h2>
+  <div class="skills-buttons">
+    <button>Python</button>
+    <button>TensorFlow</button>
+    <button>Keras</button>
+    <button>OpenCV</button>
+    <button>Flask</button>
+    <button>HTML</button>
+    <button>CSS</button>
+    <button>NumPy</button>
+    <button>Pandas</button>
+    <button>Git</button>
+  </div>
+</section>
+
+
+  <!-- Contact Section -->
+ <section id="contact" class="contact">
+  <h2 class="section-title">Contact Me</h2>
+  <div class="contact-container">
+    <a href="mailto:prinshagnihotri67@gmail.com" class="contact-card" target="_blank">
+      <span>Email</span>
+      <small>prinshagnihotri67@gmail.com</small>
+    </a>
+
+    <a href="https://github.com/Prinsh-85" class="contact-card" target="_blank">
+      <span>GitHub</span>
+      <small>github.com/Prinsh-85</small>
+    </a>
+
+    <a href="https://www.linkedin.com/in/prinsh-agnihotri-97b738284" class="contact-card" target="_blank">
+      <span>LinkedIn</span>
+      <small>Prinsh Agnihotri</small>
+    </a>
+  </div>
+</section>
+<div class="resume-download">
+  <a href="Prinsh CV2[1].docx" download class="resume-button">
+    Download Resume
+  </a>
+</div>
+
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Prinsh Agnihotri. All rights reserved.
+  </footer>
+
+</body>
+</html>
